@@ -1,7 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import { TailwindProvider } from "tailwind-rn";
-import Customer from "./src/Screens/Customer";
+import RootNavigator from "./src/Navigator/RootNavigator";
+import Customer from "./src/Screens/CustomerScreen";
 import utilities from "./tailwind.json";
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
     // @ts-ignore - TailwindProvider is missing a type definition
     <TailwindProvider utilities={utilities}>
       <NavigationContainer>
-        <Customer />
+        <RootNavigator />
       </NavigationContainer>
     </TailwindProvider>
   );

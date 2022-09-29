@@ -2,11 +2,11 @@ import { Text, SafeAreaView, StyleSheet, Platform, StatusBar } from "react-nativ
 import { useTailwind } from "tailwind-rn/dist";
 import React from "react";
 
-const Customer = () => {
+const CustomerScreen = () => {
   const tw = useTailwind();
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
-      <Text style={tw("font-bold text-3xl")}>UPS tracking App</Text>
+      <Text style={tw("font-bold text-3xl")}>Customers Screen</Text>
     </SafeAreaView>
   );
 };
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Customer;
+export default CustomerScreen;
