@@ -1,20 +1,49 @@
-import { Text, SafeAreaView, StyleSheet, Platform, StatusBar } from "react-native";
+import { ScrollView, ActivityIndicator } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
+import {
+  CompositeNavigationProp,
+  useNavigation,
+} from "@react-navigation/native";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { TabStackParamList } from "../Navigator/TabNavigator";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../Navigator/RootNavigator";
+import { Image, Input } from "@rneui/themed";
+
+export type CustomerScreenNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<TabStackParamList, "Customers">,
+  NativeStackNavigationProp<RootStackParamList>
+>;
 
 const CustomerScreen = () => {
   const tw = useTailwind();
+  const navigation = useNavigation();
+  const [ input, setInput ] = useState<string>('');
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    })
+  }, [])
+
   return (
-    <SafeAreaView style={styles.AndroidSafeArea}>
-      <Text style={tw("font-bold text-3xl")}>Customers Screen</Text>
-    </SafeAreaView>
+    <ScrollView style={{ backgroundColor: "#59C1CC" }}>
+      <Image
+        source={{ uri : 'https://links.papareact.com/3jc'}}
+        containerStyle={tw("w-full h-64")}
+        PlaceholderContent={<ActivityIndicator />}
+      />
+
+      <Input
+        placeholder="Search by customer"
+        value={input}
+        onChangeText={setInput}
+        containerStyle={tw("bg-white pt-5 pb-0 px-10")}
+      />
+
+    </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
-  }
-});
 
 export default CustomerScreen;
