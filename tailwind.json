@@ -37,12 +37,6 @@
 			"lineHeight": 36
 		}
 	},
-	"text-xl": {
-		"style": {
-			"fontSize": 20,
-			"lineHeight": 28
-		}
-	},
 	"font-bold": {
 		"style": {
 			"fontWeight": "700"
