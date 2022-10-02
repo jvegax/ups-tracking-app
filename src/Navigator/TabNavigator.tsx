@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { memo, useLayoutEffect } from "react";
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
@@ -55,4 +55,4 @@ const TabNavigator = () => {
   );
 };
 
-export default TabNavigator;
+export default memo(TabNavigator);

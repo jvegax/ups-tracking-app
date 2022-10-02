@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import useCustomerOrders from "../hooks/useCustomerOrders";
 import { useTailwind } from "tailwind-rn/dist";
 import { useNavigation } from "@react-navigation/native";
@@ -48,4 +48,4 @@ const CustomerCard = ({ email, name, userId }: Props) => {
   );
 };
 
-export default CustomerCard;
+export default memo(CustomerCard);

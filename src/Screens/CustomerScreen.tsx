@@ -1,6 +1,6 @@
 import { ScrollView, ActivityIndicator, Text } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
-import React, { useLayoutEffect, useState } from "react";
+import React, { memo, useLayoutEffect, useState } from "react";
 import {
   CompositeNavigationProp,
   useNavigation,
@@ -53,8 +53,10 @@ const CustomerScreen = () => {
             <CustomerCard key={ID} email={email} name={name} userId={ID} />
           );
         })}
+        {loading && <ActivityIndicator />}
+        {error && <Text style={tw("text-xl text-red-700 font-bold")}>{error.message}</Text>}
     </ScrollView>
   );
 };
 
-export default CustomerScreen;
+export default memo(CustomerScreen);

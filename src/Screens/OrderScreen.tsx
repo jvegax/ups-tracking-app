@@ -1,6 +1,6 @@
 import { Text, SafeAreaView, StyleSheet, Platform, StatusBar, ScrollView } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
-import React from "react";
+import React, { memo } from "react";
 
 const OrderScreen = () => {
   const tw = useTailwind();
@@ -12,4 +12,4 @@ const OrderScreen = () => {
 };
 
 
-export default OrderScreen;
+export default memo(OrderScreen);

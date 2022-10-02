@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./TabNavigator";
 import ModalScreen from "./ModalScreen";
@@ -28,4 +28,4 @@ const RootNavigator = () => {
   );
 };
 
-export default RootNavigator;
+export default memo(RootNavigator);
