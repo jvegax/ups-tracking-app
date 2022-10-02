@@ -1,8 +1,5 @@
 import React, { memo, useLayoutEffect } from "react";
-import {
-  BottomTabNavigationOptions,
-  createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CustomerScreen from "../Screens/CustomerScreen";
 import OrderScreen from "../Screens/OrderScreen";
 import { useNavigation } from "@react-navigation/native";
@@ -17,6 +14,7 @@ const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const TabNavigator = () => {
   const navigation = useNavigation();
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -28,7 +26,7 @@ const TabNavigator = () => {
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: "#56a2b7",
         tabBarInactiveTintColor: "#8e8e8e",
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused }) => {
           if (route.name === "Customers") {
             return (
               <Icon
@@ -42,7 +40,7 @@ const TabNavigator = () => {
               <Icon
                 name="box"
                 type="entypo"
-                color={focused ? "#56a2b7" : "#8e8e8e"}
+                color={focused ? "#EB6A7C" : "#8e8e8e"}
               />
             );
           }

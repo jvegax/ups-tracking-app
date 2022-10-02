@@ -14,6 +14,10 @@
   z-index: 10
 }
 
+.m-0 {
+  margin: 0px
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem
@@ -22,6 +26,11 @@
 .mx-auto {
   margin-left: auto;
   margin-right: auto
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px
 }
 
 .mb-5 {
@@ -60,6 +69,30 @@
   margin-top: 1rem
 }
 
+.mb-auto {
+  margin-bottom: auto
+}
+
+.ml-12 {
+  margin-left: 3rem
+}
+
+.ml-2 {
+  margin-left: 0.5rem
+}
+
+.ml-4 {
+  margin-left: 1rem
+}
+
+.ml-5 {
+  margin-left: 1.25rem
+}
+
+.-mt-3 {
+  margin-top: -0.75rem
+}
+
 .h-64 {
   height: 16rem
 }
@@ -70,6 +103,10 @@
 
 .flex-row {
   flex-direction: row
+}
+
+.items-start {
+  align-items: flex-start
 }
 
 .items-center {
@@ -90,6 +127,18 @@
 
 .rounded-lg {
   border-radius: 0.5rem
+}
+
+.rounded-xl {
+  border-radius: 0.75rem
+}
+
+.rounded {
+  border-radius: 0.25rem
+}
+
+.rounded-none {
+  border-radius: 0px
 }
 
 .border-b {
@@ -127,6 +176,26 @@
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem
 }
 
 .pt-16 {
@@ -210,4 +279,9 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity))
 }

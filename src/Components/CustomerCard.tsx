@@ -12,13 +12,15 @@ type Props = {
   userId: string;
 };
 
-const CustomerCard = ({ email, name, userId }: Props) => {
-  const { loading, error, customerOrders } = useCustomerOrders(userId);
+const CustomerCard: FC<Props> = ({ email, name, userId }) => {
+  const { customerOrders } = useCustomerOrders(userId);
   const tw = useTailwind();
   const navigation = useNavigation<CustomerScreenNavigationProp>();
 
   return (
-    <TouchableOpacity onPress={ () => navigation.navigate('MyModal', { userId, name })}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("MyModal", { userId, name })}
+    >
       <Card containerStyle={tw("p-5 rounded-lg")}>
         <View>
           <View style={tw("flex-row justify-between")}>
@@ -29,14 +31,14 @@ const CustomerCard = ({ email, name, userId }: Props) => {
 
             <View style={tw("flex-row items-center justify-end")}>
               <Text style={{ color: "#59C1CC" }}>
-                {customerOrders?.length}x
+                {customerOrders?.length} x
               </Text>
               <Icon
-                style={tw("mb-5 ml-auto")}
+                style={tw("ml-2")}
                 name="box"
                 type="entypo"
                 color="#59C1CC"
-                size={50}
+                size={25}
               />
             </View>
           </View>
